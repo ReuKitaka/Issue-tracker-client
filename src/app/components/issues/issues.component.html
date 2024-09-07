@@ -1,0 +1,19 @@
+<div class="issue-container">
+    <h2>Issue Tracker</h2>
+  
+    <div class="issue-form">
+      <input [(ngModel)]="newIssue.title" placeholder="Title" />
+      <input [(ngModel)]="newIssue.description" placeholder="Description" />
+      <button (click)="addIssue()">Add Issue</button>
+    </div>
+  
+    <div *ngIf="issues.length > 0" class="issue-list">
+      <div *ngFor="let issue of issues" class="issue-item">
+        <h3>{{ issue.title }}</h3>
+        <p>{{ issue.description }}</p>
+        <button (click)="updateIssue(issue)">Update</button>
+        <button (click)="deleteIssue(issue.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+  
